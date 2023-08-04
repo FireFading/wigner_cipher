@@ -19,14 +19,19 @@ The Wigner Cipher is a simple encryption technique and can be used for education
 To encrypt a message with the Wigner Cipher, a user needs to choose a secret key and then apply the encryption process on the plaintext. Similarly, decryption requires the original secret key used for encryption.
 
 - by default is encrypt
+- secret key you can pass by adding into `.env` file or pass as argument
+
 ```bash
     usage: main.py [-h] [-d]
+
+    usage: main.py [-h] [-d] [-k KEY]
 
     Encrypt and Decrypt
 
     options:
-    -h, --help     show this help message and exit
-    -d, --decrypt  Decrypt encrypted text
+    -h, --help         show this help message and exit
+    -d, --decrypt      Decrypt encrypted text
+    -k KEY, --key KEY  Key to encrypt/decrypt
 ```
 
 ## Note

@@ -1,8 +1,13 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv(".env.example")
+
 class WignerCipher:
     ALPHABET = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 
-    def __init__(self, key: str):
-        self.key = key.lower()
+    def __init__(self, key: str = None):
+        self.key = key.lower() if key else os.getenv("KEY")
 
     def get_char_index(self, char: str) -> int:
         return self.ALPHABET.index(char.lower())
