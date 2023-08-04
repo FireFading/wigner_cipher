@@ -3,11 +3,17 @@ import os
 
 load_dotenv(".env.example")
 
-class WignerCipher:
-    ALPHABET = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+RUSSIAN = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+ENGLISH = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    def __init__(self, key: str = None):
-        self.key = key.lower() if key else os.getenv("KEY")
+class WignerCipher:
+    def __init__(self, key: str = None, language: str = "russian"):
+        is_russian = language == "russian"
+        if key:
+            self.key = key.lower()
+        else:
+            self.key = os.getenv("RUSSIAN_KEY") if is_russian else os.getenv("ENGLISH_KEY")
+        self.ALPHABET = RUSSIAN if is_russian else ENGLISH
 
     def get_char_index(self, char: str) -> int:
         return self.ALPHABET.index(char.lower())

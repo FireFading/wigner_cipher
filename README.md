@@ -22,16 +22,16 @@ To encrypt a message with the Wigner Cipher, a user needs to choose a secret key
 - secret key you can pass by adding into `.env` file or pass as argument
 
 ```bash
-    usage: main.py [-h] [-d]
-
-    usage: main.py [-h] [-d] [-k KEY]
+    usage: main.py [-h] [-d] [-k KEY] [-l {russian,english}]
 
     Encrypt and Decrypt
 
     options:
-    -h, --help         show this help message and exit
-    -d, --decrypt      Decrypt encrypted text
-    -k KEY, --key KEY  Key to encrypt/decrypt
+    -h, --help            show this help message and exit
+    -d, --decrypt         Decrypt encrypted text
+    -k KEY, --key KEY     Key to encrypt/decrypt
+    -l {russian,english}, --language {russian,english}
+                            Language to encrypt/decrypt
 ```
 
 ## Note
