@@ -13,6 +13,6 @@ def format(session: nox.Session) -> None:
 def lint(session: nox.Session) -> None:
     session.install("ruff", "flake8")
     session.run(
-        "ruff", "check", "--config=configs/.ruff.toml", "--fix", "core.py", "main.py"
+        "ruff", "check", "--config=configs/.ruff.toml", "--fix", "core", "main.py"
     )
     session.run("flake8", "--config=configs/.flake8", "core", "main.py")
